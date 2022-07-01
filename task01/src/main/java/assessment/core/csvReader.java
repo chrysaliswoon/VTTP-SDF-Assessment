@@ -6,7 +6,9 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collection;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.List;
 
 import javax.xml.crypto.Data;
@@ -101,6 +103,8 @@ public class csvReader {
                 String line2 = keyValuePair[1];
                 String line3 = keyValuePair[2];
                 String line4 = keyValuePair[3];
+
+    
                 fileData.put("Line 1", line1);
                 fileData.put("Line 2", line2);
                 fileData.put("Line 3", line3);
@@ -110,9 +114,6 @@ public class csvReader {
                 this.line2 = fileData.get("Line 2");
                 this.line3 = fileData.get("Line 3");
                 this.line4 = fileData.get("Line 4");
-
-
-                // System.out.println(address);
 
             } 
             count++; // count increments as you read lines
