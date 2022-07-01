@@ -9,15 +9,16 @@ public class Main
     {
         String csvFile;
         String txtFile;
-        csvReader reader;
+        Template template;
+
 
         if (args.length > 0) {
-            csvFile = args[0];
-            txtFile = args[1];
+            csvFile = "../" + args[0];
+            txtFile = "../" + args[1];
 
-            //? Sends the txtfile over to the csvreader
-            reader = new csvReader("../" + csvFile);
-            reader.start(); 
+            //? Sends the files
+            template = new Template(csvFile, txtFile);
+            template.write(); 
         }
         
     }
