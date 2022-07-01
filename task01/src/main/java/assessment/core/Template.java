@@ -24,11 +24,22 @@ public class Template {
 
         while ((line = br.readLine()) != null) { // read through file line by line
 
+            csvReader csvData = new csvReader(csvFile);
+            csvData.start();
+            String line1 = csvData.getLine1();
+            String line2 = csvData.getLine2();
+            String line3 = csvData.getLine3();
+            String line4 = csvData.getLine4();
+
             // array to hold replacements
             String[][] replacements = {
-                    { "__address__", "Privet Drive" },
-                    { "__first_name__", "Harry" },
-                    { "__years__", "2" },
+                    { "__address__", line3 },
+                    { "__first_name__", line1 },
+                    { "__years__", line4},
+                    { "__salutations__", line1},
+                    { "__last_name__", line2},
+                    { "__package_name__", line3},
+                    { "__price__", line4},
 
             };
 
@@ -43,4 +54,5 @@ public class Template {
         br.close(); // do not forget to close the resources
 
     }
+
 }
